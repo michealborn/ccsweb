@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>信贷系统</title>
+</head>
+<body>
+<h2>用户管理</h2>
+<ol>
+    <a href="/systemManagement/gotoInsertOrUpdateUser">新增</a>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>工号</th>
+            <th>用户名</th>
+            <th>创建人</th>
+        </tr>
+        <tr  th:each="user : ${usrUsers}">
+            <td th:text="${user.userCode}">Onions</td>
+            <td th:text="${user.userName}">test@test.com.cn</td>
+            <td th:text="${user.createUser}">yes</td>
+        </tr>
+    </table>
+
+</ol>
+</body>
+</html>

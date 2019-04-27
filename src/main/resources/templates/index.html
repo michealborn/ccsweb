@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/index.css}" />
+    <title>信贷系统</title>
+</head>
+<body>
+<div class="banner"></div>
+<div class="nav">
+    <ul >
+        <li>
+            <a href="/index">首页</a>
+        </li>
+        <li>
+            <a href="#">审批管理</a>
+            <ul>
+                <li>
+                    <a href="/approveManagement/backlog">待办事项</a>
+                </li>
+                <li>
+                    <a href="#">已办事项</a>
+                </li>
+                <li>
+                    <a href="#">办结事项</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">系统管理</a>
+            <ul>
+                <li>
+                    <a href="/systemManagement/user">用户管理</a>
+                </li>
+                <li>
+                    <a href="#">角色管理</a>
+                </li>
+                <li>
+                    <a href="#">菜单管理</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/goLoginout">登出</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

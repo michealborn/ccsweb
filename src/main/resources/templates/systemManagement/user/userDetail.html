@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>信贷系统</title>
+</head>
+<body>
+<h2>用户管理</h2>
+<table border="1" cellspacing="0">
+    <form action="/systemManagement/insertOrUpdateUser">
+        <tr>
+            <td>工号:</td>
+            <td>
+                <input type="text" name="userCode" th:text="${usrUser.userCode}"/>
+            </td>
+            <td>密码:</td>
+            <td>
+                <input type="password" name="password" th:text="${usrUser.password}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>用户名:</td>
+            <td>
+                <input type="text" name="userName" th:text="${usrUser.userName}"/>
+            </td>
+        </tr>
+        <tr>
+            <td><button>提交</button></td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>
