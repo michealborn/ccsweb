@@ -34,11 +34,11 @@ public class UsrUserService {
     }
 
     public boolean insertOrUpdateUser(UsrUser usrUser){
+        //加密密码
+        String encodePassword = passwordEncoder.encode(usrUser.getPassword());
+        usrUser.setPassword(encodePassword);
         int result = usrUserMapper.updateByPrimaryKeySelective(usrUser);
         if(result<1){//更新小于0，开始插入
-            //加密密码
-            String encodePassword = passwordEncoder.encode(usrUser.getPassword());
-            usrUser.setPassword(encodePassword);
             result = usrUserMapper.insert(usrUser);
         }
         return result>0?true:false;

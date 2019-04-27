@@ -32,7 +32,7 @@ public class SystemManagementController {
     @RequestMapping("/gotoInsertOrUpdateUser")
     public String gotoInsertOrUpdateUser(Model model, UsrUser user){
         if(user!=null){
-            UsrUser usrUser = usrUserService.selectByPrimaryKey(user.getUserCode());
+            user = usrUserService.selectByPrimaryKey(user.getUserCode());
         }
         model.addAttribute("usrUser",user);
         return "/systemManagement/user/userDetail";

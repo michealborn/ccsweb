@@ -12,12 +12,12 @@
         <tr>
             <th>工号</th>
             <th>用户名</th>
-            <th>创建人</th>
+            <th>操作</th>
         </tr>
         <tr  th:each="user : ${usrUsers}">
-            <td th:text="${user.userCode}">Onions</td>
-            <td th:text="${user.userName}">test@test.com.cn</td>
-            <td th:text="${user.createUser}">yes</td>
+            <td th:text="${user.userCode}"></td>
+            <td th:text="${user.userName}"></td>
+            <td><a th:href="@{'/systemManagement/gotoInsertOrUpdateUser?userCode='+${user.userCode}}">编辑</a></td>
         </tr>
     </table>
 
