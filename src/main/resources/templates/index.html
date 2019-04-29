@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/index.css}" />
@@ -8,7 +9,7 @@
 <body>
 <div class="banner"></div>
 <div class="nav">
-    <ul >
+    <ul>
         <li>
             <a href="/index">首页</a>
         </li>
@@ -21,7 +22,7 @@
                 <li>
                     <a href="#">已办事项</a>
                 </li>
-                <li >
+                <li>
                     <a href="#">办结事项</a>
                 </li>
             </ul>
@@ -75,6 +76,8 @@
             <a href="/goLoginout">登出</a>
         </li>
     </ul>
+
+
 </div>
 </body>
 </html>

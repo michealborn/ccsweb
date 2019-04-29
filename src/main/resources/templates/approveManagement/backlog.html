@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title>信贷系统</title>
 </head>
 <body>
     <h2>待办事项</h2>
+    <div sec:authorize="hasAuthority('/ADMIN')">
+        只有能访问/ADMIN路径的人才能看到这句话
+    </div>
+    <div sec:authorize="hasAuthority('/ROOT')">
+        只有能访问/ROOT路径的人才能看到这句话
+        ROOT
+    </div>
 </body>
 </html>

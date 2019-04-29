@@ -35,7 +35,12 @@ public class LoginService implements UserDetailsService {
 
         UsrUser usrUser = usrUserService.selectByPrimaryKey(username);
 //        String encode = passwordEncoder.encode("123456");
-        List<GrantedAuthority> authority = AuthorityUtils.commaSeparatedStringToAuthorityList("ADMIN");
+        List<GrantedAuthority> authority = null;
+        if(username.equals("admin")){
+            authority = AuthorityUtils.commaSeparatedStringToAuthorityList("/ADMIN");
+        }else{
+            authority = AuthorityUtils.commaSeparatedStringToAuthorityList("/ROOT");
+        }
         //从库里取出需要比较的真实用户名密码
         User user = new User(username, usrUser.getPassword(),/*数据库里的密码*/
                 true,
