@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>信贷系统</title>
+</head>
+<body>
+<h2>流程列表</h2>
+<ol>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>流程定义id</th>
+            <th>流程定义名</th>
+            <th>流程标识</th>
+            <th>流程版本</th>
+            <th>流程操作</th>
+        </tr>
+        <tr  th:each="process : ${processList}">
+            <td th:text="${process.id}"></td>
+            <td th:text="${process.name}"></td>
+            <td th:text="${process.key}"></td>
+            <td th:text="${process.version}"></td>
+            <td><a th:href="@{'/processManagement/readyProcess?processKey='+${process.key}}">发起流程</a></td>
+        </tr>
+    </table>
+
+</ol>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>信贷系统</title>
+</head>
+<body>
+<h2>发起流程</h2>
+<ol>
+    <table border="1" cellspacing="0">
+        <form action="/processManagement/runProcess">
+            <input type="hidden" name="processKey" th:value="${processKey}"/>
+            <tr>
+                <td>审批意见:</td>
+                <td>
+                    <input type="text" name="comment" />
+                </td>
+            </tr>
+            <tr>
+                <td><button>提交</button></td>
+            </tr>
+        </form>
+    </table>
+
+</ol>
+</body>
+</html>
