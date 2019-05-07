@@ -7,12 +7,31 @@
 </head>
 <body>
     <h2>待办事项</h2>
-    <div sec:authorize="hasAuthority('/ADMIN')">
+    <!--<div sec:authorize="hasAuthority('/ADMIN')">
         只有能访问/ADMIN路径的人才能看到这句话
     </div>
     <div sec:authorize="hasAuthority('/ROOT')">
         只有能访问/ROOT路径的人才能看到这句话
         ROOT
-    </div>
+    </div>-->
+    <ol>
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>任务id</th>
+                <th>任务名称</th>
+                <th>操作人</th>
+                <th>创建时间</th>
+                <th>流程操作</th>
+            </tr>
+            <tr  th:each="task : ${taskList}">
+                <td th:text="${task.id}"></td>
+                <td th:text="${task.name}"></td>
+                <td th:text="${task.assignee}"></td>
+                <td th:text="${task.createTime}"></td>
+                <td><a th:href="@{'/approveManagement/completeProcessByTaskId?taskId='+${task.id}}">办理流程</a></td>
+            </tr>
+        </table>
+
+    </ol>
 </body>
 </html>

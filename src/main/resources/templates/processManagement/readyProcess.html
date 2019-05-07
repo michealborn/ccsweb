@@ -11,6 +11,15 @@
         <form action="/processManagement/runProcess">
             <input type="hidden" name="processKey" th:value="${processKey}"/>
             <tr>
+                <td>流程处理:</td>
+                <td>
+                    <select name="result">
+                        <option value ="agree">同意</option>
+                        <option value ="rejust">拒绝</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
                 <td>审批意见:</td>
                 <td>
                     <input type="text" name="comment" />

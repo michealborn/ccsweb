@@ -1,8 +1,9 @@
 package com.magfin.ccs.webccs.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UsrUser {
+public class UsrUser implements Serializable{
     private String userCode;
 
     private String userName;
